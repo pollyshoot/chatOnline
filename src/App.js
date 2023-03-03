@@ -22,6 +22,7 @@ import Divider from '@mui/material/Divider';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
+import Grid from '@mui/material/Grid';
 
 
 
@@ -30,10 +31,10 @@ import Avatar from '@mui/material/Avatar';
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header"> */}
-      <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
+
+<Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" >
+        <Toolbar >
           <IconButton
             size="large"
             edge="start"
@@ -44,22 +45,25 @@ function App() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-     Welcome to online chat
+     Friends' online chat
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </Box>
 
-       
-      {/* </header> */}
-      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+<Grid container spacing={2}>
+{/* <Grid item xs={12}> */}
+
+  {/* </Grid> */}
+  <Grid item xs={4}>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
           <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
         </ListItemAvatar>
         <ListItemText
-          primary="Brunch this weekend?"
+          primary="Chit-chat"
           secondary={
             <React.Fragment>
               <Typography
@@ -68,9 +72,9 @@ function App() {
                 variant="body2"
                 color="text.primary"
               >
-                Ali Connors
+                Rachel Green
               </Typography>
-              {" — I'll be in your neighborhood doing errands this…"}
+              {" — Have you seen Monica with that haircut? Awfull, isn't it? Poor thing..."}
             </React.Fragment>
           }
         />
@@ -81,7 +85,7 @@ function App() {
           <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
         </ListItemAvatar>
         <ListItemText
-          primary="Summer BBQ"
+          primary="Rachel 30th BDay Party"
           secondary={
             <React.Fragment>
               <Typography
@@ -90,9 +94,9 @@ function App() {
                 variant="body2"
                 color="text.primary"
               >
-                to Scott, Alex, Jennifer
+                to Ross Geller, Monica Geller
               </Typography>
-              {" — Wish I could come, but I'm out of town this…"}
+              {" — Are you kidding me?! Of course I'll be there!"}
             </React.Fragment>
           }
         />
@@ -103,7 +107,7 @@ function App() {
           <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
         </ListItemAvatar>
         <ListItemText
-          primary="Oui Oui"
+          primary="Parle France"
           secondary={
             <React.Fragment>
               <Typography
@@ -112,15 +116,66 @@ function App() {
                 variant="body2"
                 color="text.primary"
               >
-                Sandra Adams
+                Joey Tribbiani
               </Typography>
-              {' — Do you have Paris recommendations? Have you ever…'}
+              {' — Did you read that French script, that I gave you yesterday? '}
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Rehearsals"
+          secondary={
+            <React.Fragment>
+              <Typography
+                sx={{ display: 'inline' }}
+                component="span"
+                variant="body2"
+                color="text.primary"
+              >
+                Producer
+              </Typography>
+              {' — I can come on Monday at about 3pm. Is it fine for you? '}
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Proposal"
+          secondary={
+            <React.Fragment>
+              <Typography
+                sx={{ display: 'inline' }}
+                component="span"
+                variant="body2"
+                color="text.primary"
+              >
+                Ross Geller
+              </Typography>
+              {' — when are you going to propose Rachel? what are you waiting for? '}
             </React.Fragment>
           }
         />
       </ListItem>
     </List>
-
+  </Grid>
+  <Grid item xs={8}>
+    {/* <Item>xs=4</Item> */}
+  </Grid>
+  <Grid item xs={8}>
+    {/* <Item>xs=4</Item> */}
+  </Grid>
+  <Grid item xs={4}>
     <Box 
   component="form"
   sx={{
@@ -136,6 +191,15 @@ function App() {
         />
      <Button variant="text"><SendIcon/></Button>
         </Box>
+  </Grid>
+</Grid>
+
+     
+
+       
+     
+
+    
       </div>
 );
 }
